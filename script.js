@@ -12,16 +12,51 @@ var q2a2 = DocumentFragment.getElementById("q2a2");
 var q3a1 = DocumentFragment.getElementById("q3a1");
 var q3a2 = DocumentFragment.getElementById("q3a2");
 
-q1a1.addEventLiter("click",introvert);
-q1a2.addEventLiter("click",extrovert);
+q1a1.addEventListner("click",introvert);
+q1a2.addEventListner("click",extrovert);
 
-q2a1.addEventLiter("click",introvert);
-q2a2.addEventLiter("click",extrovert);
+q2a1.addEventListner("click",introvert);
+q2a2.addEventListner("click",extrovert);
 
-q3a1.addEventLiter("click",introvert);
-q3a2.addEventLiter("click",extrovert
+q3a1.addEventListner("click",introvert);
+q3a2.addEventListner("click",extrovert
 
-                   function introvert() {"questionCount =" + questionCount + "introvertScore = " + introvertScore); 
-                                          function extrovert() {"questionCount =" + questionCount + "extrovertScore = " + extrovertScore);
+function introvert() {
+  catScore += 1;
+  questionCount += 1;
+  
+  console.log("questionCount =" + questionCount + "introvertScore = " + introvertScore); 
+  if (questionCount == 3){
+  console.log("This quiz is done!");
+  updateResult();
+  }   
+}
+function extrovert() {
+  extrovertScore += 1;          
+  questionCount += 1;
+console.log("questionCount =" + questionCount + "extrovertScore = " + extrovertScore);
+  if (questionCount == 3){
+  console.log("This quiz is done!");
+updateResult();
+}   
+}                                                                
 
-                                                                
+function updateResult() {
+  if (introvertScore >= 2){
+    result.innerHTML = "You are an introvert!";
+    console.log("You are an introvert!");
+} else if (extrovertScore >= 2) {
+    result.innerHTML = "You are an extrovert!";
+    console.log("You are an extrovert!");
+}
+}   
+
+var result = document.getElementById("result");
+
+var restartButton = document.getElementById("restart").innerHTML = "Restart the quiz!";
+
+restartButton.addEventListener("click", updateRestart);
+
+function updateRestart(){
+  document.getElementById("restart").innerHTML = "Restart the quiz!";
+}
