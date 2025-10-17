@@ -1,5 +1,7 @@
 # Personality Quiz Starter Code
 
+<img src="attached_assets/image_1760676998170.png" alt="Quiz preview" width="500">
+
 This is a place for you to start building your personality quiz!
 
 ### Project Requirements
