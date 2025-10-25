@@ -54,6 +54,18 @@ function updateResult() {
     console.log("You are an extrovert!");
   }
 
+  // Hide all questions
+  var questions = document.querySelectorAll(".question");
+  questions.forEach(function(question) {
+    question.style.display = "none";
+  });
+  
+  // Hide all question titles (h2 elements except result)
+  var questionTitles = document.querySelectorAll("main h2:not(#result)");
+  questionTitles.forEach(function(title) {
+    title.style.display = "none";
+  });
+
   // Show restart button
   restartButton.style.display = "block";
 }
@@ -66,6 +78,18 @@ function restartQuiz() {
 
   result.innerHTML = "Your result is...";  // Reset result display
   console.log("Quiz restarted!");
+
+  // Show all questions again
+  var questions = document.querySelectorAll(".question");
+  questions.forEach(function(question) {
+    question.style.display = "flex";
+  });
+  
+  // Show all question titles again
+  var questionTitles = document.querySelectorAll("main h2:not(#result)");
+  questionTitles.forEach(function(title) {
+    title.style.display = "block";
+  });
 
   // Hide restart button again
   restartButton.style.display = "none";
