@@ -73,14 +73,3 @@ function restartQuiz() {
 
 // Hide restart button initially
 restartButton.style.display = "none";
-
-import express from "express";
-const app = express();
-
-app.use(express.static("public")); // serve HTML files from public folder
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
-app.listen(3000, () => console.log("Server running"));
